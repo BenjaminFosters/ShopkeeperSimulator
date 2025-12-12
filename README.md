@@ -1,5 +1,7 @@
 # Shopkeeper Simulator
 
+A Simple Text-Based Terminal Roleplaying Game
+
 # Anggota Kelompok
 
 - Adrian Lorenzo Sidharta (2902616955)

@@ -4,8 +4,6 @@
 #include <string.h>
 #include <unistd.h>
 
-
-
 void recipe_check(int meat, int herbs, int spices)
 {
     printf("Checking recipes...\n");
@@ -193,26 +191,26 @@ int main(void)
             }
             break;
         case 2:
-            printf("Buy stuff functionality not implemented yet.\n");
+            printf("Sell stuff functionality not implemented yet.\n");
             break;
         case 3:
-           int manage_choice;
-            printf("\n=== Manage Stock ===\n");
-            printf("1. View Status");
-            printf("2.Cook a Meal");
-           if (scanf("%d", &manage_choice) != 1) {
-            while (getchar() != '\n') {}
-            printf("Invalid input.\n");
-            break;
-             } 
-            if (manage_stock == 1) {
-                printf("=== Current Status ===\n");
-                printf("Gold : %d\n",&gold);
-                printf("Ingredients Meat: %d, Herbs: %d, Spices: %d ", &spices &herbs &meat);
-            }
+        //    int manage_choice;
+        //     printf("\n=== Manage Stock ===\n");
+        //     printf("1. View Status");
+        //     printf("2.Cook a Meal");
+        //    if (scanf("%d", &manage_choice) != 1) {
+        //     while (getchar() != '\n') {}
+        //     printf("Invalid input.\n");
+        //     break;
+        //      } 
+        //     if (manage_stock == 1) {
+        //         printf("=== Current Status ===\n");
+        //         printf("Gold : %d\n",&gold);
+        //         printf("Stock: ")
+        //     }
 
-            printf("Ingredients - Meat: %d, Herbs: %d, Spices: %d\n", meat, herbs, spices);
-            recipe_check(meat, herbs, spices);
+            // printf("Ingredients - Meat: %d, Herbs: %d, Spices: %d\n", meat, herbs, spices);
+            // recipe_check(meat, herbs, spices);
             break;
         case 4:
             printf("Exiting the tavern. Safe travels!\n");
