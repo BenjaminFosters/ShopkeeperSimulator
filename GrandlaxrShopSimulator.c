@@ -303,20 +303,26 @@ void buyStuff(int *gold, int *meat, int *herbs, int *spices)
     int herbs_stock = 5+ rand() % 11;  // 15–25
     int spices_stock = 10 + rand() % 11; // 10–20
 
+    do {
+        printf("\n=== Supplier Market ===\n");
+        printf("Supplier stock today!!!\n");
+        printf("Gold: %d\n", *gold);
+        printf("1. Meat   (%dg) (stock: %d)\n", meat_price, meat_stock);
+        printf("2. Herbs  (%dg) (stock: %d)\n", herbs_price, herbs_stock);
+        printf("3. Spices (%dg) (stock: %d)\n", spices_price, spices_stock);
+        printf("4. Leave\n");
+        printf("Choice: ");
+        
+        if (scanf("%d", &choice) != 1) {
+            while (getchar() != '\n');
+            return;
+        }
 
-    printf("\n=== Supplier Market ===\n");
-    printf("Supplier stock today!!!\n");
-    printf("Gold: %d\n", *gold);
-    printf("1. Meat   (%dg) (stock: %d)\n", meat_price, meat_stock);
-    printf("2. Herbs  (%dg) (stock: %d)\n", herbs_price, herbs_stock);
-    printf("3. Spices (%dg) (stock: %d)\n", spices_price, spices_stock);
-    printf("4. Leave\n");
-    printf("Choice: ");
+        if (choice < 1 || choice > 4) {
+            printf("Invalid Option, try again!\n");
+        }
+    } while (choice < 1 || choice > 4);
 
-    if (scanf("%d", &choice) != 1) {
-        while (getchar() != '\n');
-        return;
-    }
 
     if (choice == 4) return;
 
