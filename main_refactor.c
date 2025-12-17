@@ -24,6 +24,138 @@ struct dragon_item
     int price;
 };
 
+int serveCustomer(struct dragon_item *soup, int gold) {
+    int price;
+    if (soup.stock > 0)
+    {
+        int customer_type = rand() % 4;
+        switch (customer_type)
+        {
+        case 0:
+            printf("Customer wants to buy a Dragon Meat Soup, How much would you charge for a Dragon Meat Soup?\n");
+            if (scanf("%d", &price) != 1)
+            {
+                price = 0;
+                while (getchar() != '\n')
+                {
+                }
+            }
+            if (price >= 2)
+            {
+                printf("Customer buys a Dragon Meat Soup.\n");
+                gold += price;
+                soup.stock -= 1;
+            }
+            else
+            {
+                if (rand() % 100 < 70)
+                {
+                    printf("Customer is unhappy but buys a Dragon Meat Soup.\n");
+                    gold += price;
+                    soup.stock -= 1;
+                }
+                else
+                {
+                    printf("Customer leaves angrily.\n");
+                }
+            }
+            break;
+        case 1:
+                printf("Customer wants to buy a meal. How much would you charge for a meal?\n");
+            if (scanf("%d", &price) != 1)
+            {
+                price = 0;
+                while (getchar() != '\n')
+                {
+                }
+            }
+            if (price >= 2)
+            {
+                printf("Customer buys a meal.\n");
+                gold += price;
+                soup.stock -= 1;
+            }
+            else
+            {
+                if (rand() % 100 < 70)
+                {
+                    printf("Customer is unhappy but buys a meal.\n");
+                    gold += price;
+                    soup.stock -= 1;
+                }
+                else
+                {
+                    printf("Customer leaves angrily.\n");
+                }
+            }
+            break;
+        case 2:
+            printf("Customer wants to buy a souvenir. How much would you charge for a souvenir?\n");
+            if (scanf("%d", &price) != 1)
+            {
+                price = 0;
+                while (getchar() != '\n')
+                {
+                }
+            }
+            if (price >= 5)
+            {
+                printf("Customer buys a souvenir.\n");
+                gold += price;
+                soup.stock -= 1;
+            }
+            else
+            {
+                if (rand() % 100 < 50)
+                {
+                    printf("Customer is unhappy but buys a souvenir.\n");
+                    gold += price;
+                    soup.stock -= 1;
+                }
+                else
+                {
+                    printf("Customer leaves angrily.\n");
+                }
+            }
+            break;
+        case 3:
+            printf("Customer wants to buy a premium item. How much would you charge for a premium item?\n");
+            if (scanf("%d", &price) != 1)
+            {
+                price = 0;
+                while (getchar() != '\n')
+                {
+                }
+            }
+            if (price >= 10)
+            {
+                printf("Customer buys a premium item.\n");
+                gold += price;
+                soup.stock -= 1;
+            }
+            else
+            {
+                if (rand() % 100 < 30)
+                {
+                    printf("Customer is unhappy but buys a premium item.\n");
+                    gold += price;
+                    soup.stock -= 1;
+                }
+                else
+                {
+                    printf("Customer leaves angrily.\n");
+                }
+            }
+            break;
+        }
+    }
+    else
+    {
+        printf("No stock to serve a customer.\n");
+    }
+    return 0;
+}
+
 int main(void)
 {
     int choice = 0;
@@ -62,133 +194,6 @@ int main(void)
         switch (choice)
         {
         case 1:
-            if (soup.stock > 0)
-            {
-                int customer_type = rand() % 4;
-                switch (customer_type)
-                {
-                case 0:
-                    printf("Customer wants to buy a Dragon Meat Soup, How much would you charge for a Dragon Meat Soup?\n");
-                    if (scanf("%d", &price) != 1)
-                    {
-                        price = 0;
-                        while (getchar() != '\n')
-                        {
-                        }
-                    }
-                    if (price >= 2)
-                    {
-                        printf("Customer buys a Dragon Meat Soup.\n");
-                        gold += price;
-                        soup.stock -= 1;
-                    }
-                    else
-                    {
-                        if (rand() % 100 < 70)
-                        {
-                            printf("Customer is unhappy but buys a Dragon Meat Soup.\n");
-                            gold += price;
-                            soup.stock -= 1;
-                        }
-                        else
-                        {
-                            printf("Customer leaves angrily.\n");
-                        }
-                    }
-                    break;
-               case 1:
-                     printf("Customer wants to buy a meal. How much would you charge for a meal?\n");
-                    if (scanf("%d", &price) != 1)
-                    {
-                        price = 0;
-                        while (getchar() != '\n')
-                        {
-                        }
-                    }
-                    if (price >= 2)
-                    {
-                        printf("Customer buys a meal.\n");
-                        gold += price;
-                        soup.stock -= 1;
-                    }
-                    else
-                    {
-                        if (rand() % 100 < 70)
-                        {
-                            printf("Customer is unhappy but buys a meal.\n");
-                            gold += price;
-                            soup.stock -= 1;
-                        }
-                        else
-                        {
-                            printf("Customer leaves angrily.\n");
-                        }
-                    }
-                    break;
-                case 2:
-                    printf("Customer wants to buy a souvenir. How much would you charge for a souvenir?\n");
-                    if (scanf("%d", &price) != 1)
-                    {
-                        price = 0;
-                        while (getchar() != '\n')
-                        {
-                        }
-                    }
-                    if (price >= 5)
-                    {
-                        printf("Customer buys a souvenir.\n");
-                        gold += price;
-                        soup.stock -= 1;
-                    }
-                    else
-                    {
-                        if (rand() % 100 < 50)
-                        {
-                            printf("Customer is unhappy but buys a souvenir.\n");
-                            gold += price;
-                            soup.stock -= 1;
-                        }
-                        else
-                        {
-                            printf("Customer leaves angrily.\n");
-                        }
-                    }
-                    break;
-                case 3:
-                    printf("Customer wants to buy a premium item. How much would you charge for a premium item?\n");
-                    if (scanf("%d", &price) != 1)
-                    {
-                        price = 0;
-                        while (getchar() != '\n')
-                        {
-                        }
-                    }
-                    if (price >= 10)
-                    {
-                        printf("Customer buys a premium item.\n");
-                        gold += price;
-                        soup.stock -= 1;
-                    }
-                    else
-                    {
-                        if (rand() % 100 < 30)
-                        {
-                            printf("Customer is unhappy but buys a premium item.\n");
-                            gold += price;
-                            soup.stock -= 1;
-                        }
-                        else
-                        {
-                            printf("Customer leaves angrily.\n");
-                        }
-                    }
-                    break;
-                }
-            }
-            else
-            {
-                printf("No stock to serve a customer.\n");
-            }
             break;
         case 2:
             printf("Sell stuff functionality not implemented yet.\n");
