@@ -1,6 +1,6 @@
-# Shopkeeper Simulator
+# Grandlaxr Tavern
 
-A Simple Text-Based Terminal Roleplaying Game
+A Simple Text-Based Terminal Trading Roleplaying Game
 
 # Anggota Kelompok
 
@@ -8,6 +8,29 @@ A Simple Text-Based Terminal Roleplaying Game
 - Nathan Rayhan Risanto (2902603031)
 - Ruben Wealth Hu (2902583383)
 
-# Briefing Game
+## Cara Compile dan Menjalankan
 
-TBA.
+Proyek ini ditulis dalam bahasa C dan dapat dikompilasi di Windows, macOS, maupun Linux menggunakan compiler standar.
+
+Windows dapat menggunakan MinGW (di Dev-C++), dan untuk macOS menggunakan Apple Clang dari XCode.
+
+### Linux
+
+Pastikan **GCC** sudah terinstall melalui package manager.
+
+Contoh untuk Fedora:
+
+```bash
+sudo dnf install gcc
+```
+
+### Clone dan Build
+
+Jalankan perintah berikut di terminal:
+
+```bash
+git clone https://github.com/BenjaminFosters/ShopkeeperSimulator
+cd ShopkeeperSimulator
+gcc GrandlaxrShopSimulator.c -o GrandlaxrShopSimulator
+./GrandlaxrShopSimulator
+```
